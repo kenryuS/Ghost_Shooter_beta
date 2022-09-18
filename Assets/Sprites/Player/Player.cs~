@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player : MonoBehaviour
+{
+
+    float speed = 0.1f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        int inx = 0;
+        int iny = 0;
+        
+        if (Input.GetKey(KeyCode.LeftArrow)) inx = -1;
+        if (Input.GetKey(KeyCode.RightArrow)) inx = 1;
+        if (Input.GetKey(KeyCode.UpArrow)) iny = 1;
+        if (Input.GetKey(KeyCode.DownArrow)) iny = -1;
+
+        transform.Translate(inx * this.speed, iny * this.speed, 0);
+    }
+}
