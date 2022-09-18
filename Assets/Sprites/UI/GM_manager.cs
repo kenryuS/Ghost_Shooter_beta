@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GM_manager : MonoBehaviour
 {
-
     // Update is called once per frame
     void Update()
     {

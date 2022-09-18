@@ -8,7 +8,7 @@ public class Timerui : MonoBehaviour
     GameObject uitimer;
     float delta;
     float span = 1.0f;
-    int time;
+    public static int time;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class Timerui : MonoBehaviour
         if (this.delta > this.span)
         {
             this.delta = 0;
-            this.time += 1;
+            time += 1;
             this.uitimer.GetComponent<Text>().text = "Time: " + time.ToString() + "s";
         }
     }

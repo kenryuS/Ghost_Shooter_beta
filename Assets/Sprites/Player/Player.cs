@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public int Controltype;
     public bool mouseenable;
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         SceneManager.LoadScene("GameOver");
     }

@@ -7,7 +7,7 @@ public class Scoreui : MonoBehaviour
 {
 
     GameObject uiscore;
-    int score = 0;
+    public static int score = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class Scoreui : MonoBehaviour
 
     public void updateui()
     {
-        this.score += 1;
-        this.uiscore.GetComponent<Text>().text = "Score: " + score.ToString();
+        score += 1;
+        this.uiscore.GetComponent<Text>().text = "Kills: " + score.ToString();
     }
 }
