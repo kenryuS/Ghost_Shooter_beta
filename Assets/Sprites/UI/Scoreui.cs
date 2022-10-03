@@ -12,6 +12,7 @@ public class Scoreui : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+	score = 0;
         this.uiscore = GameObject.Find("Score");
         this.uiscore.GetComponent<Text>().text = "Score: 0";
     }

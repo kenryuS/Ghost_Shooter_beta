@@ -13,6 +13,7 @@ public class Timerui : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+	time = 0;
         this.uitimer = GameObject.Find("Timer");
         this.uitimer.GetComponent<Text>().text = "Time: 0s";
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class gameManager : MonoBehaviour
+public class gameManagerScript : MonoBehaviour
 {
     public static int difficulty;
     public static float diffvalfact;

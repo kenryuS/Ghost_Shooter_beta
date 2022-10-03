@@ -7,12 +7,10 @@ public class finalscore : MonoBehaviour
 {
     public Text uiFinalScore;
     public float finScore;
-    public int killscore = Scoreui.score;
-    public int timeScore = Timerui.time;
 
     void Start()
     {
-        finScore = Scoreui.score + timeScore;
-        uiFinalScore.text = "Final Score: " + finScore;
+        this.finScore = (Scoreui.score + Timerui.time) * gameManagerScript.diffvalfact;
+        uiFinalScore.text = "Kill score: +" + Scoreui.score + "\n" + "Time: +" + Timerui.time + "s\n" + "Final Score: " + this.finScore;
     }
 }
