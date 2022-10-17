@@ -10,7 +10,7 @@ public class GM_manager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Main");
+            SceneManager.LoadScene("StartMenu");
         }
     }
 }

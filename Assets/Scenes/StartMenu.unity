@@ -282,7 +282,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 123497559}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 940934218}
+        m_TargetAssemblyTypeName: titleManager, Assembly-CSharp
+        m_MethodName: change
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &123497559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,8 +472,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 108, y: 93}
-  m_SizeDelta: {x: 100, y: 30}
+  m_AnchoredPosition: {x: 130, y: 93}
+  m_SizeDelta: {x: 130, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &408582067
 MonoBehaviour:
@@ -953,6 +965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 940934217}
+  - component: {fileID: 940934218}
   m_Layer: 0
   m_Name: manager
   m_TagString: Untagged
@@ -975,6 +988,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &940934218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940934216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec03989f44302d63ad0bcc9bd7b1ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1233572297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,6 +1266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2084343004}
   - component: {fileID: 2084343005}
+  - component: {fileID: 2084343006}
   m_Layer: 5
   m_Name: difficultySeting
   m_TagString: Untagged
@@ -1322,6 +1348,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2084343006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084343003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3cb2e55b5a78fc796fb2a84d677488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 408582067}
+  diffislide: {fileID: 2084343005}
+  diffvalue: 0
 --- !u!1 &2089079260
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class gameManagerScript : MonoBehaviour
 {
-    public static int difficulty;
+    public static float difficulty;
     public static float diffvalfact;
 
     public static void playerDied()
@@ -16,6 +16,7 @@ public class gameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
+        difficulty = diffslide.diffvalue;
         if (difficulty == 1) diffvalfact = 0.5f;
         if (difficulty == 2) diffvalfact = 1.0f;
         if (difficulty == 3) diffvalfact = 1.75f;
