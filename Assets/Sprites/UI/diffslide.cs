@@ -7,20 +7,24 @@ public class diffslide : MonoBehaviour
 {
     public Text label;
     public Slider diffislide;
-    public static float diffvalue;
+    public static string difficulty;
+    public static float diffval;
 
     // Update is called once per frame
     void Update()
     {
-        diffvalue = diffislide.value;
-        if (diffvalue == 1.0f) {
+        diffval = diffislide.value;
+        if (diffval == 1.0f) {
             label.text = "Difficulty: Easy";
+            difficulty = "Easy";
         }
-        if (diffvalue == 2.0f) {
+        if (diffval == 2.0f) {
             label.text = "Difficulty: Normal";
+            difficulty = "Normal";
         }
-        if (diffvalue == 3.0f) {
+        if (diffval == 3.0f) {
             label.text = "Difficulty: Hard";
+            difficulty = "Hard";
         }
     }
 }

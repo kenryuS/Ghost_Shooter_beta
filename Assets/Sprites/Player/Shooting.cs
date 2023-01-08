@@ -16,11 +16,20 @@ public class Shooting : MonoBehaviour
     
     void Start()
     {
-        if (this.fireRate <= 0.3f) this.damage = 1.0f;
+        if (weaponselect.wval == 0) {
+            this.fireRate = 0.3f;
+            this.damage = 1.0f;
+        }
         
-        else if (this.fireRate <= 0.6f) this.damage = 2.0f;
+        else if (weaponselect.wval == 1) {
+            this.fireRate = 0.6f;
+            this.damage = 2.0f;
+        }
         
-        else if (this.fireRate <= 1.5f) this.damage = 5.0f;
+        else if (weaponselect.wval == 2) {
+            this.fireRate = 1.5f;
+            this.damage = 5.0f;
+        }
     }
     
     // Update is called once per frame

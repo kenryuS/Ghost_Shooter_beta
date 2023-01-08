@@ -16,7 +16,7 @@ public class gameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        difficulty = diffslide.diffvalue;
+        difficulty = diffslide.diffval;
         if (difficulty == 1) diffvalfact = 0.5f;
         if (difficulty == 2) diffvalfact = 1.0f;
         if (difficulty == 3) diffvalfact = 1.75f;

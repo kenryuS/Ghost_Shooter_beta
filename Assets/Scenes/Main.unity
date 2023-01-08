@@ -341,7 +341,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 4668126249290082253, guid: 25d6aeb29b17f8dacb678d3781e26712, type: 3}
-  spawnRate: 0
   spawnLineX: 2
   isGenerating: 1
 --- !u!4 &604779845
@@ -904,8 +903,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 120, y: -35}
-  m_SizeDelta: {x: 200, y: 40}
+  m_AnchoredPosition: {x: 245.07492, y: -33.75}
+  m_SizeDelta: {x: 450, y: 38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1928406406
 MonoBehaviour:

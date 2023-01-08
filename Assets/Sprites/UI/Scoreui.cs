@@ -14,12 +14,12 @@ public class Scoreui : MonoBehaviour
     {
 	score = 0;
         this.uiscore = GameObject.Find("Score");
-        this.uiscore.GetComponent<Text>().text = "Score: 0";
+        this.uiscore.GetComponent<Text>().text = "Difficulty: " + diffslide.difficulty + " Kills: 0";
     }
 
     public void updateui()
     {
         score += 1;
-        this.uiscore.GetComponent<Text>().text = "Kills: " + score.ToString();
+        this.uiscore.GetComponent<Text>().text = "Difficulty: " + diffslide.difficulty + " Kills: " + score.ToString();
     }
 }
