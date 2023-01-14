@@ -17,7 +17,7 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         if (weaponselect.wval == 0) {
-            this.fireRate = 0.3f;
+            this.fireRate = 0.2f;
             this.damage = 1.0f;
         }
         

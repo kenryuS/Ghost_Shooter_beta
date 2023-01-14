@@ -22,7 +22,13 @@ public class monster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.HP = Random.Range(1, 10);
+        if (diffslide.diffval == 1.0f) {
+            this.HP = Random.Range(3,8);
+        } else if (diffslide.diffval == 2.0f) {
+            this.HP = Random.Range(6,10);
+        } else if (diffslide.diffval == 3.0f) {
+            this.HP = Random.Range(12,15);
+        }
         this.Angle = Random.Range(0, 271);
         Quaternion rotation = Quaternion.AngleAxis(this.Angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1);
