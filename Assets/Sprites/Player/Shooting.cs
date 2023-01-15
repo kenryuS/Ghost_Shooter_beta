@@ -7,6 +7,8 @@ public class Shooting : MonoBehaviour
     
     public Transform shoot_point;
     public GameObject bulletPrefab;
+
+    public GameObject player;
     
     public float bulletForce = 16f;
     
@@ -35,21 +37,21 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((GameObject.Find("player").GetComponent<Player>().Controltype == 1 && Input.GetKey(KeyCode.Z)) && this.cooldown == false)
+        if ((player.GetComponent<Player>().Controltype == 0 && Input.GetKey(KeyCode.Z)) && this.cooldown == false)
         {
             Shoot();
             Invoke("ResetCooldown",this.fireRate);
             cooldown = true;
         }
         
-        if ((GameObject.Find("player").GetComponent<Player>().Controltype == 2 && Input.GetKey(KeyCode.Space)) && this.cooldown == false)
+        if ((player.GetComponent<Player>().Controltype == 1 && Input.GetKey(KeyCode.Space)) && this.cooldown == false)
         {
             Shoot();
             Invoke("ResetCooldown",this.fireRate);
             cooldown = true;
         }
         
-        if ((GameObject.Find("player").GetComponent<Player>().mouseenable == true && Input.GetMouseButton(0)) && this.cooldown == false)
+        if ((player.GetComponent<Player>().mouseenable == true && Input.GetMouseButton(0)) && this.cooldown == false)
         {
             Shoot();
             Invoke("ResetCooldown",this.fireRate);

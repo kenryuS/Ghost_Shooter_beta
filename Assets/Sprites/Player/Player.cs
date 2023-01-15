@@ -12,6 +12,11 @@ public class Player : MonoBehaviour
     public int Controltype;
     public bool mouseenable;
 
+    void Start() {
+        this.Controltype = controlAssetSelector.contVal;
+        this.mouseenable = toggleMouseCont.mctVal;
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         gameManagerScript.playerDied();
@@ -35,8 +40,8 @@ public class Player : MonoBehaviour
 
     void playercontrol()
     {
-        if (this.Controltype == 1) control1();
-        if (this.Controltype == 2) control2();
+        if (this.Controltype == 0) control1();
+        if (this.Controltype == 1) control2();
         if (this.mouseenable == true) controlmouse();
 
         rb.MovePosition(rb.position + this.control * this.speed * Time.deltaTime);

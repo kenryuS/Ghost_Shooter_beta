@@ -1190,6 +1190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shoot_point: {fileID: 1515319695}
   bulletPrefab: {fileID: 1432817520064408359, guid: e2472107f4d15160a910b512c395f184, type: 3}
+  player: {fileID: 2140365720}
   bulletForce: 16
   fireRate: 0.22
   damage: 1
