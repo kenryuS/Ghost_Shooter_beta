@@ -41,21 +41,21 @@ public class Shooting : MonoBehaviour
         {
             Shoot();
             Invoke("ResetCooldown",this.fireRate);
-            cooldown = true;
+            this.cooldown = true;
         }
         
         if ((player.GetComponent<Player>().Controltype == 1 && Input.GetKey(KeyCode.Space)) && this.cooldown == false)
         {
             Shoot();
             Invoke("ResetCooldown",this.fireRate);
-            cooldown = true;
+            this.cooldown = true;
         }
         
         if ((player.GetComponent<Player>().mouseenable == true && Input.GetMouseButton(0)) && this.cooldown == false)
         {
             Shoot();
             Invoke("ResetCooldown",this.fireRate);
-            cooldown = true;
+            this.cooldown = true;
         }
     }
     

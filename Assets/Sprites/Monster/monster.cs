@@ -17,7 +17,7 @@ public class monster : MonoBehaviour
 
     private int Angle;
 
-	public bool isShooting;
+    public bool isShooting;
 
     // Start is called before the first frame update
     void Start()
@@ -58,12 +58,12 @@ public class monster : MonoBehaviour
     void FixedUpdate()
     {
         this.delta += Time.fixedDeltaTime;
-            if ((this.delta > this.fireRate) && (this.isShooting == true))
-            {
-                this.delta = 0;
-                shooting();
-            }
-        transform.Translate(-0.02f, 0, 0);
+        if ((this.delta > this.fireRate) && (this.isShooting == true))
+        {
+            this.delta = 0;
+            shooting();
+        }
+        transform.Translate(-0.02f * gameManagerScript.diffvalfact, 0, 0);
     }
 
     void shooting()

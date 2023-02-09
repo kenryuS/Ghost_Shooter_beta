@@ -7,19 +7,30 @@ public class Player : MonoBehaviour
 
     float speed = 4.0f;
     int rotspeed = 1;
+    int pRemains = 3;
+    bool cooldown = false;
     Vector2 control;
     public Rigidbody2D rb;
     public int Controltype;
     public bool mouseenable;
 
     void Start() {
+        playerRemains.remains = this.pRemains;
+        GameObject.Find("playerRemain").GetComponent<playerRemains>().updateValue();
         this.Controltype = controlAssetSelector.contVal;
         this.mouseenable = toggleMouseCont.mctVal;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        gameManagerScript.playerDied();
+        if (this.cooldown == false) {
+            this.pRemains -= 1;
+            GameObject.Find("playerRemain").GetComponent<playerRemains>().updateui();}
+        if (this.pRemains < 0) {
+            gameManagerScript.playerDied();
+        }
+        Invoke("collisionCoolDown", 3.0f);
+        this.cooldown = true;
     }
 
     void control1()
@@ -55,6 +66,10 @@ public class Player : MonoBehaviour
 
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, this.rotspeed);
+    }
+
+    void collisionCoolDown() {
+        this.cooldown = false;
     }
 
     void FixedUpdate()

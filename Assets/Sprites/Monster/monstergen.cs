@@ -5,7 +5,7 @@ using UnityEngine;
 public class monstergen : MonoBehaviour
 {
     public GameObject monster;
-    float spawnRate = 1.0f;
+    public static float spawnRate = 1.0f;
     public float spawnLineX = 2.0f;
     public bool isGenerating = true;
     float delta = 0;
@@ -15,7 +15,7 @@ public class monstergen : MonoBehaviour
     {
         if (this.isGenerating == true) {
             this.delta += Time.fixedDeltaTime;
-            if ((this.delta > this.spawnRate) && this.spawnRate != 0.0f)
+            if ((this.delta > spawnRate) && spawnRate != 0.0f)
             {
                 this.delta = 0;
                 GameObject gen = Instantiate(monster) as GameObject;

@@ -10,21 +10,34 @@ public class diffslide : MonoBehaviour
     public static string difficulty;
     public static float diffval;
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        diffval = diffislide.value;
+        diffval = 1;
+        ValueChanged(this.diffislide);
+        diffislide.onValueChanged.AddListener(delegate {
+            ValueChanged(this.diffislide);
+        });
+    }
+
+    void ValueChanged(Slider c) {
+        diffval = c.value;
         if (diffval == 1.0f) {
-            label.text = "Difficulty: Easy";
+            label.text = "Easy";
             difficulty = "Easy";
+            monstergen.spawnRate = (1.0f)/(0.5f);
+            gameManagerScript.diffvalfact = 0.5f;
         }
-        if (diffval == 2.0f) {
-            label.text = "Difficulty: Normal";
+        else if (diffval == 2.0f) {
+            label.text = "Normal";
             difficulty = "Normal";
+            monstergen.spawnRate = 1.0f;
+            gameManagerScript.diffvalfact = 1.0f;
         }
-        if (diffval == 3.0f) {
-            label.text = "Difficulty: Hard";
+        else if (diffval == 3.0f) {
+            label.text = "Hard";
             difficulty = "Hard";
+            monstergen.spawnRate = (1.0f)/(1.5f);
+            gameManagerScript.diffvalfact = 1.5f;
         }
     }
 }

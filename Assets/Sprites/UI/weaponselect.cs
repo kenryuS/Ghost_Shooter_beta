@@ -18,6 +18,5 @@ public class weaponselect : MonoBehaviour
 
     void DropdownValueChanged(Dropdown c) {
         wval = c.value;
-        Debug.Log(wval);
     }
 }
