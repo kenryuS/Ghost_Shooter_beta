@@ -12,9 +12,15 @@ public class gameManagerScript : MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
+    public static void gameStart() {
+        SceneManager.LoadScene("Main");
+    }
+
     // Update is called once per frame
     void Update()
     {
-
+        if ((SceneManager.GetActiveScene()).name == "GameOver" && Input.GetKeyDown(KeyCode.Space)) {
+            SceneManager.LoadScene("StartMenu");
+        }
     }
 }
