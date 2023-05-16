@@ -21,6 +21,7 @@ public class Timerui : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (gameManagerScript.isPaused == true) {return;}
         this.delta += Time.fixedDeltaTime;
         if (this.delta > this.span)
         {

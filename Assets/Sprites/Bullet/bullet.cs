@@ -6,6 +6,9 @@ public class bullet : MonoBehaviour
 {
 
     public GameObject hiteffect;
+    public Rigidbody2D rb;
+
+    private Vector2 v;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -17,8 +20,17 @@ public class bullet : MonoBehaviour
         }
     }
 
+    void Start() {
+        v = rb.velocity;
+    }
+
     void FixedUpdate()
     {
+        if (gameManagerScript.isPaused == true) {
+            rb.velocity = new Vector2(0.0f,0.0f);
+            return;
+        }
+        else {rb.velocity = v;}
         if (Mathf.Abs(transform.position.x) > 8.0f) Destroy(gameObject);
         if (Mathf.Abs(transform.position.y) > 7.0f) Destroy(gameObject);
     }

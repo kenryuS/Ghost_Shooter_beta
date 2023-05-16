@@ -57,6 +57,7 @@ public class monster : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (gameManagerScript.isPaused == true) {return;}
         this.delta += Time.fixedDeltaTime;
         if ((this.delta > this.fireRate) && (this.isShooting == true))
         {

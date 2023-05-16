@@ -32,11 +32,13 @@ public class Shooting : MonoBehaviour
             this.fireRate = 1.5f;
             this.damage = 5.0f;
         }
+        if (gameManagerScript.diffvalfact > 1.0f) {this.damage *= gameManagerScript.diffvalfact;}
     }
     
     // Update is called once per frame
     void Update()
     {
+        if (gameManagerScript.isPaused == true) {return;}
         if ((player.GetComponent<Player>().Controltype == 0 && Input.GetKey(KeyCode.Z)) && this.cooldown == false)
         {
             Shoot();

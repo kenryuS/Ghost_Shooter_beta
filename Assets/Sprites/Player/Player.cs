@@ -74,6 +74,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (gameManagerScript.isPaused == true) {return;}
         playercontrol();
         Vector3 minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
         Vector3 maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height,0));

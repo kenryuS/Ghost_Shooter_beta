@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class gameManagerScript : MonoBehaviour
 {
     public static float diffvalfact;
+    public static bool isPaused = false;
+
+    public GameObject pauseText;
 
     public static void playerDied()
     {
@@ -21,6 +24,11 @@ public class gameManagerScript : MonoBehaviour
     {
         if ((SceneManager.GetActiveScene()).name == "GameOver" && Input.GetKeyDown(KeyCode.Space)) {
             SceneManager.LoadScene("StartMenu");
+        }
+
+        if ((SceneManager.GetActiveScene()).name == "Main" && Input.GetKeyDown(KeyCode.Escape)) {
+            pauseText.SetActive (!pauseText.activeInHierarchy);
+            isPaused = isPaused ? false : true;
         }
     }
 }

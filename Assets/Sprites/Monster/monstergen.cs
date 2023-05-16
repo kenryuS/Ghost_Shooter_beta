@@ -13,6 +13,7 @@ public class monstergen : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (gameManagerScript.isPaused == true) {return;}
         if (this.isGenerating == true) {
             this.delta += Time.fixedDeltaTime;
             if ((this.delta > spawnRate) && spawnRate != 0.0f)
