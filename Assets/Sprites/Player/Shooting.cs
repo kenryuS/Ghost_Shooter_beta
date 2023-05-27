@@ -9,6 +9,10 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
 
     public GameObject player;
+
+    public AudioSource audioSource;
+
+    public AudioClip[] audioClips;
     
     public float bulletForce = 16f;
     
@@ -41,26 +45,27 @@ public class Shooting : MonoBehaviour
         if (gameManagerScript.isPaused == true) {return;}
         if ((player.GetComponent<Player>().Controltype == 0 && Input.GetKey(KeyCode.Z)) && this.cooldown == false)
         {
-            Shoot();
-            Invoke("ResetCooldown",this.fireRate);
-            this.cooldown = true;
+            ShootTheBullet();
         }
         
         if ((player.GetComponent<Player>().Controltype == 1 && Input.GetKey(KeyCode.Space)) && this.cooldown == false)
         {
-            Shoot();
-            Invoke("ResetCooldown",this.fireRate);
-            this.cooldown = true;
+            ShootTheBullet();
         }
         
         if ((player.GetComponent<Player>().mouseenable == true && Input.GetMouseButton(0)) && this.cooldown == false)
         {
-            Shoot();
-            Invoke("ResetCooldown",this.fireRate);
-            this.cooldown = true;
+            ShootTheBullet();
         }
     }
-    
+
+    void ShootTheBullet() {
+        Shoot();
+        audioSource.PlayOneShot(audioClips[weaponselect.wval],sevolumeslide.seVolume);
+        Invoke("ResetCooldown", this.fireRate);
+        this.cooldown = true;
+    }
+
     void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, shoot_point.position, shoot_point.rotation);
