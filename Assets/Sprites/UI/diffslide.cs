@@ -26,18 +26,24 @@ public class diffslide : MonoBehaviour
             difficulty = "Easy";
             monstergen.spawnRate = (1.0f)/(0.5f);
             gameManagerScript.diffvalfact = 0.5f;
+			gameManagerScript.waveNumber = 3;
+			gameManagerScript.secPerWave = 20;
         }
         else if (diffval == 2.0f) {
             label.text = "Normal";
             difficulty = "Normal";
             monstergen.spawnRate = 1.0f;
             gameManagerScript.diffvalfact = 1.0f;
+			gameManagerScript.waveNumber = 5;
+			gameManagerScript.secPerWave = 36;
         }
         else if (diffval == 3.0f) {
             label.text = "Hard";
             difficulty = "Hard";
             monstergen.spawnRate = (1.0f)/(1.5f);
             gameManagerScript.diffvalfact = 1.5f;
+			gameManagerScript.waveNumber = 10;
+			gameManagerScript.secPerWave = 60;
         }
     }
 }

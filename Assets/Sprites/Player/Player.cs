@@ -55,7 +55,9 @@ public class Player : MonoBehaviour
         if (this.Controltype == 1) control2();
         if (this.mouseenable == true) controlmouse();
 
-        rb.MovePosition(rb.position + this.control * this.speed * Time.deltaTime);
+		float speedtmp = this.speed;
+		if (Input.GetKey(KeyCode.LeftShift)) speedtmp = 1.0f;
+        rb.MovePosition(rb.position + this.control * speedtmp * Time.deltaTime);
         this.control *= 0.9f;
     }
 

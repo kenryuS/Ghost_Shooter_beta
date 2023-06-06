@@ -29,7 +29,7 @@ public class monster : MonoBehaviour
         } else if (diffslide.diffval == 3.0f) {
             this.HP = Random.Range(12,15);
         }
-        this.Angle = Random.Range(0, 271);
+        this.Angle = Random.Range(-80, 81);
         Quaternion rotation = Quaternion.AngleAxis(this.Angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1);
     }
@@ -42,7 +42,8 @@ public class monster : MonoBehaviour
             if (this.HP <= 0)
             {
                 gameObject.SetActive(false);
-                GameObject.Find("Score_manager").GetComponent<Scoreui>().updateui();
+                Scoreui.addMonsterKill();
+				gameManagerScript.monsterKilled += 1;
                 Destroy(gameObject);
             }
         }

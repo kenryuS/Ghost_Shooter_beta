@@ -341,6 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 4668126249290082253, guid: 25d6aeb29b17f8dacb678d3781e26712, type: 3}
+  player: {fileID: 2140365720}
   spawnLineX: 2
   isGenerating: 1
 --- !u!4 &604779845
